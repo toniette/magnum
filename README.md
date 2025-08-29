@@ -92,17 +92,24 @@ persistente e um cache Redis para otimização de consultas.
     ```bash
     docker-compose up -d
     ```
-6. Gere as chaves de aplicação:
+6. Ajuste o ownership dos diretórios:
+    ```bash
+    docker exec initiator chown -R www-data:www-data /var/www/html/storage && \
+    docker exec ingestor chown -R www-data:www-data /var/www/html/storage && \
+    docker exec ingestor chown -R www-data:www-data /var/www/html/bootstrap/cache && \
+    docker exec initiator chown -R www-data:www-data /var/www/html/bootstrap/cache
+    ```
+7. Gere as chaves de aplicação:
     ```bash
     docker exec -it initiator php artisan key:generate && \
     docker exec -it ingestor php artisan key:generate
     ```
-7. Execute as migrações do banco de dados:
+8. Execute as migrações do banco de dados:
     ```bash
     docker exec -it initiator php /var/www/html/artisan migrate && \
     docker exec -it ingestor php /var/www/html/artisan migrate
     ```
-8. Inicie o processo de ingestão inicial:
+9. Inicie o processo de ingestão inicial:
     ```bash
     docker exec -it ingestor php /var/www/html/artisan queue:work --queue=ingest --sleep=3 --tries=3 --timeout=90
     ```
