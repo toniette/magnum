@@ -64,6 +64,11 @@ persistente e um cache Redis para otimização de consultas.
 - Redis
 - Docker e Docker Compose
 
+## ADR
+Houve a opção por não haver fallback do cache para o banco de dados 
+relacional em preferência à separação estrita de mecanismos de consulta e comando (CQRS).
+
+
 ## Configuração do Ambiente
 1. Clone o repositório:
     ```bash
@@ -119,3 +124,29 @@ persistente e um cache Redis para otimização de consultas.
     docker exec -it initiator php /var/www/html/artisan test && \
     docker exec -it ingestor php /var/www/html/artisan test
     ```
+## Uso
+Apenas um dos serviços possui endpoint público funcional.
+O Serviço Iniciador é o único que permite a consulta de marcas e veículos,
+enquanto o Serviço Ingestor é responsável pela busca e armazenamento de dados.
+O Serviço Iniciador possui os seguintes endpoints:
+
+### Endpoints de consulta
+- `GET /api/brands`: Retorna todas as marcas.
+- `GET /api/brands/{brandId}`: Retorna todos os modelos de uma marca específica.
+
+### Endpoints de comando
+- `PUT /api/details/{detailId}/version/{versionId}`: Atualiza os detalhes de um veículo específico.
+
+__request__
+```json
+{
+  "type":  "string",
+  "value":  "string",
+  "brand":  "string", 
+  "model":  "string", 
+  "reference":  "string",
+  "fuel":  "string", 
+  "fuel_type":  "string"
+}
+```
+
