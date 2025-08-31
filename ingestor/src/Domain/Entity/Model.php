@@ -4,14 +4,12 @@ declare(strict_types=1);
 
 namespace Src\Domain\Entity;
 
-use Src\Infrastructure\External\Http\Enum\Fipe\VehicleType;
-
-class Brand
+class Model
 {
     public function __construct(
         public readonly string $id,
         public readonly string $name,
-        public readonly VehicleType $type,
+        public readonly Brand $brand
     )
     {
     }
@@ -21,7 +19,7 @@ class Brand
         return new self(
             $item['id'],
             $item['name'],
-            VehicleType::from($item['type']),
+            Brand::fromArray($item['brand']),
         );
     }
 
@@ -30,7 +28,7 @@ class Brand
         return [
             'id' => $this->id,
             'name' => $this->name,
-            'type' => $this->type->value,
+            'brand' => $this->brand->toArray(),
         ];
     }
 }

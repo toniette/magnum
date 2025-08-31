@@ -25,7 +25,8 @@ readonly class HttpBrandRetriever implements BrandRetriever
             $brands->attach(
                 Brand::fromArray([
                     'id' => data_get($item, 'codigo'),
-                    'name' => data_get($item, 'nome')
+                    'name' => data_get($item, 'nome'),
+                    'type' => data_get($item, 'tipo'),
                 ])
             );
         });

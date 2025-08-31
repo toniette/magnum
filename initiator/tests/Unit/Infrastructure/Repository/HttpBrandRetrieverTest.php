@@ -2,14 +2,15 @@
 
 use Src\Domain\Collection\BrandCollection;
 use Src\Infrastructure\External\Http\Client\FipeClient;
+use Src\Infrastructure\External\Http\Enum\Fipe\VehicleType;
 use Src\Infrastructure\Repository\HttpBrandRetriever;
 
 test('all method returns a BrandCollection', function () {
     // Arrange
     $fipeClient = Mockery::mock(FipeClient::class);
     $inputBrands = [
-        ['codigo' => '1', 'nome' => 'Brand 1'],
-        ['codigo' => '2', 'nome' => 'Brand 2'],
+        ['codigo' => '1', 'nome' => 'Brand 1', 'tipo' => VehicleType::CAR->value],
+        ['codigo' => '2', 'nome' => 'Brand 2', 'tipo' => VehicleType::CAR->value],
     ];
     $fipeClient->shouldReceive('getBrands')
         ->andReturn($inputBrands);

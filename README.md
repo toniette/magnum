@@ -113,3 +113,9 @@ persistente e um cache Redis para otimização de consultas.
     ```bash
     docker exec -it ingestor php /var/www/html/artisan queue:work --queue=ingest --sleep=3 --tries=3 --timeout=90
     ```
+## Testes
+1. Execute os testes:
+    ```bash
+    docker exec -it initiator php /var/www/html/artisan test && \
+    docker exec -it ingestor php /var/www/html/artisan test
+    ```
