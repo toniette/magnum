@@ -18,13 +18,13 @@ use Src\Domain\Repository\VersionRetriever;
 class EloquentSyncRepository implements Sync
 {
     public function __construct(
-        protected BrandPersistence $brandRepository,
-        protected ModelPersistence $modelRepository,
+        protected BrandPersistence   $brandRepository,
+        protected ModelPersistence   $modelRepository,
+        protected DetailPersistence  $detailRepository,
         protected VersionPersistence $versionRepository,
-        protected DetailPersistence $detailRepository,
-        protected ModelRetriever $modelRetriever,
-        protected VersionRetriever $versionRetriever,
-        protected DetailRetriever $detailRetriever
+        protected ModelRetriever     $modelRetriever,
+        protected DetailRetriever    $detailRetriever,
+        protected VersionRetriever   $versionRetriever
     )
     {
     }

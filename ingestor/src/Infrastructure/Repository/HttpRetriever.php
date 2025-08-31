@@ -20,8 +20,8 @@ use Src\Infrastructure\External\Http\Client\FipeClient;
 readonly class HttpRetriever implements
     BrandRetriever,
     ModelRetriever,
-    VersionRetriever,
-    DetailRetriever
+    DetailRetriever,
+    VersionRetriever
 {
     public function __construct(
         private FipeClient $fipeClient

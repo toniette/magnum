@@ -8,14 +8,14 @@ class Detail
 {
     public function __construct(
         public readonly Version $version,
-        public readonly string $type,
-        public readonly string $value,
-        public readonly string $brand,
-        public readonly string $model,
-        public readonly string $fuel,
-        public readonly string $code,
-        public readonly string $reference,
-        public readonly string $fuelType,
+        public readonly string  $type,
+        public readonly string  $value,
+        public readonly string  $brand,
+        public readonly string  $model,
+        public readonly string  $fuel,
+        public readonly string  $code,
+        public readonly string  $reference,
+        public readonly string  $fuelType,
     )
     {
     }

@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('details', function (Blueprint $table) {
-            $table->string('id')->primary();
+            $table->string('id');
 
             $table->string('version_id');
             $table->string('type');
@@ -26,7 +26,6 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('version_id')->references('id')->on('versions');
             $table->primary(['id', 'version_id']);
         });
     }

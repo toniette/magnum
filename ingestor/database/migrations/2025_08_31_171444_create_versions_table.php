@@ -20,7 +20,6 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('model_id')->references('id')->on('models');
             $table->primary(['id', 'model_id']);
         });
     }

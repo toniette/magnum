@@ -21,6 +21,7 @@ services:
       IGNITION_LOCAL_SITES_PATH: '${PWD}'
     volumes:
       - './ingestor/:/var/www/html'
+      - './database.sqlite:/var/www/html/database/magnum.sqlite'
     networks:
       - magnum
     depends_on:
@@ -47,6 +48,7 @@ services:
       IGNITION_LOCAL_SITES_PATH: '${PWD}'
     volumes:
       - './initiator/:/var/www/html'
+      - './database.sqlite:/var/www/html/database/magnum.sqlite'
     networks:
       - magnum
     depends_on:

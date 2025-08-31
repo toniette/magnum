@@ -20,7 +20,6 @@ return new class extends Migration
             $table->timestamps();
             $table->softDeletes();
 
-            $table->foreign('brand_id')->references('id')->on('brands');
             $table->primary(['id', 'brand_id']);
         });
     }

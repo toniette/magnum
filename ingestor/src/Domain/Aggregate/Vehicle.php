@@ -12,10 +12,10 @@ use Src\Domain\Entity\Version;
 class Vehicle
 {
     public function __construct(
-        private Brand $brand,
-        private Model $model,
+        private Brand   $brand,
+        private Model   $model,
         private Version $version,
-        private Detail $detail
+        private Detail  $detail
     )
     {
     }
