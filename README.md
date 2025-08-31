@@ -1,4 +1,4 @@
-```merdaid
+```mermaid
 flowchart LR
     subgraph API1["INITIATOR"]
         A1["Carga inicial"]
