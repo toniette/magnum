@@ -87,7 +87,7 @@ readonly class HttpRetriever implements
         collect($this->fipeClient->getVersions($model))->each(function (array $item) use ($versions, $model) {
             $versions->attach(
                 Version::fromArray([
-                    'id' => (string) data_get($item, 'codigo'),
+                    'id' => data_get($item, 'codigo'),
                     'name' => data_get($item, 'nome'),
                     'model' => $model->toArray(),
                 ])
