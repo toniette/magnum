@@ -22,7 +22,7 @@ services:
     volumes:
       - './ingestor/:/var/www/html'
     networks:
-      - sail
+      - magnum
     depends_on:
       - redis
   initiator:
@@ -48,7 +48,7 @@ services:
     volumes:
       - './initiator/:/var/www/html'
     networks:
-      - sail
+      - magnum
     depends_on:
       - redis
   redis:
@@ -57,9 +57,9 @@ services:
     ports:
       - '6379:6379'
     volumes:
-      - 'sail-redis:/data'
+      - 'magnum-redis:/data'
     networks:
-      - sail
+      - magnum
     healthcheck:
       test:
         - CMD
@@ -68,8 +68,10 @@ services:
       retries: 3
       timeout: 5s
 networks:
-  sail:
+  magnum:
+    name: magnum
     driver: bridge
 volumes:
-  sail-redis:
+  magnum-redis:
+    name: magnum-redis
     driver: local

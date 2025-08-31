@@ -123,4 +123,22 @@ return [
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Trace
+    |--------------------------------------------------------------------------
+    |
+    | The trace header is the name of the header that will be used to pass the
+    | trace id between the client and the server. The trace key is the name of
+    | the key that will be used to store the trace id in the context. The trace
+    | key is used to store the trace id in the context, so that it can be
+    | accessed by other parts of the application. The trace key is used to
+    | store the trace id in the context, so that it can be accessed by other
+    | parts of the application.
+    |
+    */
+
+    'trace_header' => env('APP_TRACE_HEADER', 'x-trace-id'),
+    'trace_key' => env('APP_TRACE_KEY', 'trace_id'),
+
 ];

@@ -90,7 +90,7 @@ persistente e um cache Redis para otimização de consultas.
 4. Configure os arquivos `.env` para ambos os serviços, ajustando as variáveis de ambiente conforme necessário.
 5. Inicie os containers:
     ```bash
-    docker-compose up -d
+    docker compose up -d
     ```
 6. Ajuste o ownership dos diretórios:
     ```bash
