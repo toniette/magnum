@@ -1,3 +1,25 @@
+## Implementação pendente
+- Geração do índice em memória transitória.
+- Testes unitários do serviço ingestor.
+- Alguns testes unitários do serviço iniciador.
+- Documentação da API (Swagger/OpenAPI).
+- Melhorias na ‘interface’ de consulta (ex: paginação, filtros).
+- Mecanismo de autenticação e autorização (ex: API Key, OAuth).
+- Monitoria e logging (ex: integração com serviços como Sentry, Loggly).
+- Configuração de CI/CD (ex: GitHub Actions, GitLab CI).
+- Documentação detalhada do projeto e do código.
+- Testes de integração.
+- Otimização de desempenho.
+- Configuração de alertas (ex: via e-mail ou Slack).
+- Rate limiting para endpoints públicos.
+- Implementação de fallback da memória transitória para o banco de dados relacional.
+- Adição de índices no banco de dados para otimização de consultas.
+- Gestão de custos e estatísticas de uso da API FIPE.
+- Otimização do uso da API FIPE (ex: memória transitória, rate limiting).
+- Melhorias na segurança (ex: proteção contra ataques DDoS, injeção de SQL).
+- Implementação de testes de carga e ‘stress’.
+
+
 ```mermaid
 flowchart LR
     subgraph API1["INITIATOR"]
